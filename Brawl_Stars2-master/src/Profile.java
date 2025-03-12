@@ -6,8 +6,14 @@ public class Profile {
     private int Trophies;
 
     public String viewProfile(){
-        return null;
+        return "profile name : " + getUsername() +
+                "Trophies : " + getTrophies() +
+                "Xp : " + getXp()+
+                "Power Points : " + getPowerPoints() +
+                "Coins : " + getCoins();
     }
+
+
 
     public String getUsername() {
         return username;
@@ -49,3 +55,4 @@ public class Profile {
         Trophies = trophies;
     }
 }
+
