@@ -12,10 +12,10 @@ public class Brawler {
         this.hp = hp;
         this.rarity = rarity;
     }
-
     public boolean attack(){
-        return  false;
+        return false;
     }
+
     public boolean levelUp(Profile p, Brawler b){
         if((p.getPowerPoints() >= 200)&&(p.getCoins() >= 400)&&(isMaxLevel = false)){
             b.level = b.level + 1;
@@ -26,6 +26,7 @@ public class Brawler {
             }return true;
         }return false;
     }
+
 
 
     public boolean isMaxLevel() {

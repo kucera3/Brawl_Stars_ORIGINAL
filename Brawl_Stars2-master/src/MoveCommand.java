@@ -13,7 +13,7 @@ public class MoveCommand implements Command {
             currentLocation = currentLocation.getExits().get(direction);
             System.out.println("Moved to: " + currentLocation.getName());
         } else {
-            System.out.println("You can't go that way!");
+            System.out.println("You cant go that way");
         }
     }
 }

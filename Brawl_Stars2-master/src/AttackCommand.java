@@ -8,9 +8,9 @@ public class AttackCommand implements Command {
     @Override
     public void execute() {
         if (brawler.attack()) {
-            System.out.println("You attacked successfully!");
+            System.out.println("You attacked");
         } else {
-            System.out.println("Attack missed or failed.");
+            System.out.println("You didnt attack");
         }
     }
 }
