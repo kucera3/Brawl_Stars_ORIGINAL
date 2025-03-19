@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Map;
 
 public class Location {
@@ -6,22 +7,18 @@ public class Location {
 
     public Location(String name) {
         this.name = name;
-        this.exits = exits;
+        this.exits = new HashMap<>();  // ✅ Now the map is properly initialized
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setExit(String direction, Location room) {
+        exits.put(direction, room);
     }
 
     public Map<String, Location> getExits() {
         return exits;
     }
 
-    public void setExit(String direction, Location room) {
-        exits.put(direction, room);
+    public String getName() {
+        return name;
     }
 }
