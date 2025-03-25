@@ -7,7 +7,7 @@ public class Location {
 
     public Location(String name) {
         this.name = name;
-        this.exits = new HashMap<>();  // ✅ Now the map is properly initialized
+        this.exits = new HashMap<>();
     }
 
     public void setExit(String direction, Location room) {

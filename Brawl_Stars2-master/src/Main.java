@@ -5,7 +5,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Console console = new Console();
 
-        System.out.println("Choose your brawler (Shelly, Bull, Carl, Crow, Mandy, Mortis, Piper, Poco, Surge):");
+        System.out.println("Choose your brawler (Shelly, Bull, Carl, Crow, Mandy, Mortis, Piper, Poco, Surge)");
         String chosenBrawler = scanner.nextLine().trim().toLowerCase();
 
         Brawler playerBrawler;
@@ -20,7 +20,7 @@ public class Main {
             case "poco" -> playerBrawler = new Poco(6, 700, 5200, Rarity.RARE);
             case "surge" -> playerBrawler = new Surge(5, 1100, 5000, Rarity.LEGENDARY);
             default -> {
-                System.out.println("Invalid choice! Starting with default (Shelly).");
+                System.out.println("Invalid choice. Starting with Shelly");
                 playerBrawler = new Shelly(5, 800, 5000, Rarity.STARTERBRAWLER);
             }
         }
@@ -31,5 +31,8 @@ public class Main {
 
 
         console.start();
+
+
+
     }
 }
