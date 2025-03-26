@@ -7,7 +7,11 @@ public class Location {
 
     public Location(String name) {
         this.name = name;
-        this.exits = new HashMap<>();
+        this.exits = new HashMap<>(); // Initialize the exits map
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setExit(String direction, Location room) {
@@ -16,9 +20,5 @@ public class Location {
 
     public Map<String, Location> getExits() {
         return exits;
-    }
-
-    public String getName() {
-        return name;
     }
 }

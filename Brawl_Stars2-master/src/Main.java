@@ -27,11 +27,45 @@ public class Main {
 
         System.out.println("You chose " + playerBrawler.getClass().getSimpleName() + "!");
 
+
+        Location spawn = new Location("Spawn Point");
+        Location desert = new Location("Desert");
+        Location desert2 = new Location("Desert");
+        Location desert3 = new Location("Desert");
+        Location bushes = new Location("Bushes");
+        Location bushes2 = new Location("Bushes");
+        Location desertWithCactus = new Location("Desert With Cactus");
+
+
+        spawn.setExit("north", desert);
+        desert.setExit("south", spawn);
+        desert.setExit("east", desert2);
+        desert2.setExit("west", desert);
+        desert2.setExit("north", desert3);
+        desert3.setExit("south", desert2);
+        desert.setExit("west", bushes);
+        bushes.setExit("east", desert);
+        bushes.setExit("north", bushes2);
+        bushes2.setExit("south", bushes);
+        desert2.setExit("east", desertWithCactus);
+        desertWithCactus.setExit("west", desert2);
+
+        Location playerLocation = spawn;
+        System.out.println("You are at " + playerLocation.getName());
+
+
+        // Register movement commands dynamically
+        console.registerCommand("move north", new MoveCommand(playerLocation, "north"));
+        console.registerCommand("move south", new MoveCommand(playerLocation, "south"));
+        console.registerCommand("move east", new MoveCommand(playerLocation, "east"));
+        console.registerCommand("move west", new MoveCommand(playerLocation, "west"));
+
+
         console.registerCommand("attack", new AttackCommand(playerBrawler));
 
 
-        console.start();
 
+        console.start();
 
 
     }
