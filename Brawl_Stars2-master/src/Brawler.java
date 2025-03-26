@@ -12,21 +12,23 @@ public class Brawler {
         this.hp = hp;
         this.rarity = rarity;
     }
-    public boolean attack(){
+
+    public boolean attack() {
         return false;
     }
 
-    public boolean levelUp(Profile p, Brawler b){
-        if((p.getPowerPoints() >= 200)&&(p.getCoins() >= 400)&&(isMaxLevel = false)){
+    public boolean levelUp(Profile p, Brawler b) {
+        if ((p.getPowerPoints() >= 200) && (p.getCoins() >= 400) && (isMaxLevel = false)) {
             b.level = b.level + 1;
             b.damage = b.damage + 500;
             b.hp = b.hp + 600;
-            if(b.level == 11){
+            if (b.level == 11) {
                 b.isMaxLevel = true;
-            }return true;
-        }return false;
+            }
+            return true;
+        }
+        return false;
     }
-
 
 
     public boolean isMaxLevel() {

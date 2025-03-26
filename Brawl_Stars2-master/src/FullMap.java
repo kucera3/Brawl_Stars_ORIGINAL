@@ -33,8 +33,9 @@ public class FullMap {
     public FullMap(Map<String, Location> locations) {
         this.locations = locations;
     }
-    private String getDirection(int index){
-        return switch (index){
+
+    private String getDirection(int index) {
+        return switch (index) {
             case 1 -> "north";
             case 2 -> "south";
             case 3 -> "east";

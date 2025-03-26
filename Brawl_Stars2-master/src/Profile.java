@@ -5,14 +5,13 @@ public class Profile {
     private int coins;
     private int Trophies;
 
-    public String viewProfile(){
+    public String viewProfile() {
         return "profile name : " + getUsername() +
                 "Trophies : " + getTrophies() +
-                "Xp : " + getXp()+
+                "Xp : " + getXp() +
                 "Power Points : " + getPowerPoints() +
                 "Coins : " + getCoins();
     }
-
 
 
     public String getUsername() {
