@@ -32,37 +32,85 @@ public class Main {
         Location desert = new Location("Desert");
         Location desert2 = new Location("Desert");
         Location desert3 = new Location("Desert");
+        Location desert4 = new Location("Desert");
+        Location desert5 = new Location("Desert");
         Location bushes = new Location("Bushes");
         Location bushes2 = new Location("Bushes");
+        Location bushes3 = new Location("Bushes");
+        Location bushes4 = new Location("Bushes");
         Location desertWithCactus = new Location("Desert With Cactus");
+        Location desertWithCactus2 = new Location("Desert With Cactus");
 
+        // spawn exits
+        spawn.setExit("north", desert2);
+        spawn.setExit("west", bushes);
+        spawn.setExit("east", desert4);
+        spawn.setExit("south", bushes2);
 
-        spawn.setExit("north", desert);
-        desert.setExit("south", spawn);
-        desert.setExit("east", desert2);
-        desert2.setExit("west", desert);
-        desert2.setExit("north", desert3);
-        desert3.setExit("south", desert2);
-        desert.setExit("west", bushes);
-        bushes.setExit("east", desert);
-        bushes.setExit("north", bushes2);
-        bushes2.setExit("south", bushes);
-        desert2.setExit("east", desertWithCactus);
-        desertWithCactus.setExit("west", desert2);
+        //desert exits
+        desert.setExit("east", bushes);
+
+        //desert2 exits
+        desert2.setExit("south", spawn);
+        desert2.setExit("west", desertWithCactus);
+        desert2.setExit("east", bushes3);
+
+        //desert 3 exits
+        desert3.setExit("east", bushes2);
+        desert3.setExit("north", desert);
+
+        //desert 4 exits
+        desert4.setExit("north", bushes3);
+        desert4.setExit("east", bushes4);
+        desert4.setExit("west", spawn);
+        desert4.setExit("south", desertWithCactus2);
+
+        //bushes exits
+        bushes.setExit("north", desertWithCactus);
+        bushes.setExit("west", desert);
+        bushes.setExit("south", desert3);
+        bushes.setExit("east", spawn);
+
+        //bushes 2 exits
+        bushes2.setExit("north", spawn);
+        bushes2.setExit("west", desert3);
+        bushes2.setExit("east", desertWithCactus2);
+
+        //bushes 3 exits
+        bushes3.setExit("south",desert4);
+        bushes3.setExit("west",desert2);
+        bushes3.setExit("east",desert5);
+
+        //bushes 4 exits
+        bushes3.setExit("west",desert4);
+        bushes3.setExit("north",desert5);
+
+        //desert with cactus exits
+        desertWithCactus.setExit("south",desert4);
+        desertWithCactus.setExit("east",bushes2);
+
+        //desert with cactus 2 exits
+        desertWithCactus.setExit("north",bushes);
+        desertWithCactus.setExit("west",desert2);
+
 
         Location playerLocation = spawn;
         System.out.println("You are at " + playerLocation.getName());
 
-
-        // Register movement commands dynamically
+        //command register String
         console.registerCommand("move north", new MoveCommand(playerLocation, "north"));
         console.registerCommand("move south", new MoveCommand(playerLocation, "south"));
         console.registerCommand("move east", new MoveCommand(playerLocation, "east"));
         console.registerCommand("move west", new MoveCommand(playerLocation, "west"));
 
+        //command register WSAD
+        console.registerCommand("w", new MoveCommand(playerLocation, "north"));
+        console.registerCommand("s", new MoveCommand(playerLocation, "south"));
+        console.registerCommand("d", new MoveCommand(playerLocation, "east"));
+        console.registerCommand("a", new MoveCommand(playerLocation, "west"));
+
 
         console.registerCommand("attack", new AttackCommand(playerBrawler));
-
 
 
         console.start();
