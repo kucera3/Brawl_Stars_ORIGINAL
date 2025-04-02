@@ -1,9 +1,10 @@
 
 
 public class Brawler {
-    private int range;
-    private int damage;
-    private int hp;
+    protected int range;
+    protected int damage;
+    protected int hp;
+    protected int maxHp;
     private Rarity rarity;
     private boolean isMaxLevel;
     private int level;
@@ -13,6 +14,22 @@ public class Brawler {
         this.damage = damage;
         this.hp = hp;
         this.rarity = rarity;
+        this.maxHp = hp;
+
+
+    }
+
+
+    public void healToFull() {
+        this.hp = this.maxHp;
+        System.out.println("You returned to the Spawn Point and fully healed");
+    }
+
+
+    public void collectPowerCube() {
+        setDamage(getDamage() + 200);
+        setHp(getHp() + 1000);
+        System.out.println("You collected a Power Cube");
     }
 
     public boolean attack() {
@@ -30,6 +47,10 @@ public class Brawler {
             return true;
         }
         return false;
+    }
+
+    public void takeDamage(int damage) {
+        this.hp -= damage;
     }
 
 

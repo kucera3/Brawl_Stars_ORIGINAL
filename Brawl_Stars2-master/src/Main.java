@@ -1,9 +1,11 @@
 import java.util.Scanner;
+import java.util.Random;
 
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Random rand = new Random();
         Console console = new Console();
 
         System.out.println("Choose your brawler (Shelly, Bull, Carl, Crow, Mandy, Mortis, Piper, Poco, Surge)");
@@ -96,22 +98,38 @@ public class Main {
         desertWithCactus.setExit("north",bushes);
         desertWithCactus.setExit("west",desert2);
 
+        desert.setEnemy(generateRandomEnemy());
+        desert2.setEnemy(generateRandomEnemy());
+        desert3.setEnemy(generateRandomEnemy());
+        desert4.setEnemy(generateRandomEnemy());
+        desert5.setEnemy(generateRandomEnemy());
 
-        Location playerLocation = spawn;
-        System.out.println("You are at " + playerLocation.getName());
+        bushes.setEnemy(generateRandomEnemy());
+        bushes2.setEnemy(generateRandomEnemy());
+        bushes3.setEnemy(generateRandomEnemy());
+        bushes4.setEnemy(generateRandomEnemy());
+
+        desertWithCactus.setEnemy(generateRandomEnemy());
+        desertWithCactus2.setEnemy(generateRandomEnemy());
+
+
+
+        PlayerPosition playerPosition = new PlayerPosition(spawn);
+
+        System.out.println("You are at the spawn");
 
         //command register String
-        console.registerCommand("move north", new MoveCommand(playerLocation, "north"));
-        console.registerCommand("move south", new MoveCommand(playerLocation, "south"));
-        console.registerCommand("move east", new MoveCommand(playerLocation, "east"));
-        console.registerCommand("move west", new MoveCommand(playerLocation, "west"));
+        console.registerCommand("move north", new MoveCommand(playerPosition, "north", playerBrawler));
+        console.registerCommand("move south", new MoveCommand(playerPosition, "south", playerBrawler));
+        console.registerCommand("move east", new MoveCommand(playerPosition, "east", playerBrawler));
+        console.registerCommand("move west", new MoveCommand(playerPosition, "west", playerBrawler));
+
 
         //command register WSAD
-        console.registerCommand("w", new MoveCommand(playerLocation, "north"));
-        console.registerCommand("s", new MoveCommand(playerLocation, "south"));
-        console.registerCommand("d", new MoveCommand(playerLocation, "east"));
-        console.registerCommand("a", new MoveCommand(playerLocation, "west"));
-
+        console.registerCommand("w", new MoveCommand(playerPosition, "north", playerBrawler));
+        console.registerCommand("s", new MoveCommand(playerPosition, "south", playerBrawler));
+        console.registerCommand("d", new MoveCommand(playerPosition, "east", playerBrawler));
+        console.registerCommand("a", new MoveCommand(playerPosition, "west", playerBrawler));
 
         console.registerCommand("attack", new AttackCommand(playerBrawler));
 
@@ -119,5 +137,12 @@ public class Main {
         console.start();
 
 
+    }
+    private static Enemy generateRandomEnemy() {
+        Random rand = new Random();
+        int range = rand.nextInt(3) + 1;        // 1 to 3
+        int hp = rand.nextInt(4001) + 4000;     // 4000 to 8000
+        int damage = rand.nextInt(1001) + 500;  // 500 to 1500
+        return new Enemy(range, damage, hp);
     }
 }

@@ -1,3 +1,4 @@
+
 public class Enemy {
     private int range;
     private int damage;
@@ -7,6 +8,9 @@ public class Enemy {
         this.range = range;
         this.damage = damage;
         this.hp = hp;
+    }
+    public void takeDamage(int damage) {
+        this.hp -= damage;
     }
 
     public int getRange() {

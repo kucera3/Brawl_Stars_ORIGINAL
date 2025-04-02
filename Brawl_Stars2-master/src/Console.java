@@ -20,7 +20,6 @@ public class Console {
     public void start() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to Brawl Stars");
 
         while (true) {
             System.out.print("> ");
