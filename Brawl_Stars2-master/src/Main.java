@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -28,18 +29,20 @@ public class Main {
         System.out.println("You chose " + playerBrawler.getClass().getSimpleName() + "!");
 
 
+
+
         Location spawn = new Location("Spawn Point");
-        Location desert = new Location("Desert");
-        Location desert2 = new Location("Desert");
-        Location desert3 = new Location("Desert");
-        Location desert4 = new Location("Desert");
-        Location desert5 = new Location("Desert");
-        Location bushes = new Location("Bushes");
-        Location bushes2 = new Location("Bushes");
-        Location bushes3 = new Location("Bushes");
-        Location bushes4 = new Location("Bushes");
-        Location desertWithCactus = new Location("Desert With Cactus");
-        Location desertWithCactus2 = new Location("Desert With Cactus");
+        Location desert = new Location("Desert");//1
+        Location desert2 = new Location("Desert");//2
+        Location desert3 = new Location("Desert");//3
+        Location desert4 = new Location("Desert");//4
+        Location desert5 = new Location("Desert");//5
+        Location bushes = new Location("Bushes");//6
+        Location bushes2 = new Location("Bushes");//7
+        Location bushes3 = new Location("Bushes");//8
+        Location bushes4 = new Location("Bushes");//9
+        Location desertWithCactus = new Location("Desert With Cactus");//10
+        Location desertWithCactus2 = new Location("Desert With Cactus");//11
 
         // spawn exits
         spawn.setExit("north", desert2);

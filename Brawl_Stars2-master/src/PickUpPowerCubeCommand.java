@@ -1,3 +1,4 @@
+
 class PickupPowerCubeCommand implements Command {
     private Brawler brawler;
 
