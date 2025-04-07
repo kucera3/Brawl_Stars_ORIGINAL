@@ -1,3 +1,6 @@
+package game;
+import brawlers.*;
+import commands.*;
 public class PlayerPosition {
     private Location currentLocation;
 

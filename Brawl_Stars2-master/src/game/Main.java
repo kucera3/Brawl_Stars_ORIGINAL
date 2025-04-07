@@ -1,3 +1,6 @@
+package game;
+import brawlers.*;
+import commands.*;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -13,22 +16,22 @@ public class Main {
 
         Brawler playerBrawler;
         switch (chosenBrawler) {
-            case "shelly" -> playerBrawler = new Shelly(5, 800, 5000, Rarity.STARTERBRAWLER);
-            case "bull" -> playerBrawler = new Bull(3, 1200, 7000, Rarity.RARE);
-            case "carl" -> playerBrawler = new Carl(6, 900, 4800, Rarity.SUPERRARE);
-            case "crow" -> playerBrawler = new Crow(8, 400, 3200, Rarity.LEGENDARY);
-            case "mandy" -> playerBrawler = new Mandy(7, 1100, 4600, Rarity.EPIC);
-            case "mortis" -> playerBrawler = new Mortis(5, 1000, 5000, Rarity.MYTHIC);
-            case "piper" -> playerBrawler = new Piper(9, 1600, 4000, Rarity.EPIC);
-            case "poco" -> playerBrawler = new Poco(6, 700, 5200, Rarity.RARE);
-            case "surge" -> playerBrawler = new Surge(5, 1100, 5000, Rarity.LEGENDARY);
+            case "shelly" -> playerBrawler = new Shelly(2, 1000, 5000, Rarity.STARTERBRAWLER);
+            case "bull" -> playerBrawler = new Bull(4, 1200, 7000, Rarity.RARE);
+            case "carl" -> playerBrawler = new Carl(3, 900, 4800, Rarity.SUPERRARE);
+            case "crow" -> playerBrawler = new Crow(3, 400, 3200, Rarity.LEGENDARY);
+            case "mandy" -> playerBrawler = new Mandy(4, 1100, 4600, Rarity.EPIC);
+            case "mortis" -> playerBrawler = new Mortis(1, 1000, 5000, Rarity.MYTHIC);
+            case "piper" -> playerBrawler = new Piper(4, 1600, 4000, Rarity.EPIC);
+            case "poco" -> playerBrawler = new Poco(2, 700, 5200, Rarity.RARE);
+            case "surge" -> playerBrawler = new Surge(3, 1100, 5000, Rarity.LEGENDARY);
             default -> {
                 System.out.println("Invalid choice. Starting with Shelly");
-                playerBrawler = new Shelly(5, 800, 5000, Rarity.STARTERBRAWLER);
+                playerBrawler = new Shelly(2, 1000, 5000, Rarity.STARTERBRAWLER);
             }
         }
 
-        System.out.println("You chose " + playerBrawler.getClass().getSimpleName() + "!");
+        System.out.println("You chose " + playerBrawler.getClass().getSimpleName());
 
 
 
@@ -87,16 +90,16 @@ public class Main {
         bushes3.setExit("east",desert5);
 
         //bushes 4 exits
-        bushes3.setExit("west",desert4);
-        bushes3.setExit("north",desert5);
+        bushes4.setExit("west",desert4);
+        bushes4.setExit("north",desert5);
 
         //desert with cactus exits
-        desertWithCactus.setExit("south",desert4);
-        desertWithCactus.setExit("east",bushes2);
+        desertWithCactus2.setExit("north",desert4);
+        desertWithCactus2.setExit("west",bushes2);
 
         //desert with cactus 2 exits
-        desertWithCactus.setExit("north",bushes);
-        desertWithCactus.setExit("west",desert2);
+        desertWithCactus.setExit("south",bushes);
+        desertWithCactus.setExit("east",desert2);
 
         desert.setEnemy(generateRandomEnemy());
         desert2.setEnemy(generateRandomEnemy());
@@ -140,9 +143,9 @@ public class Main {
     }
     private static Enemy generateRandomEnemy() {
         Random rand = new Random();
-        int range = rand.nextInt(3) + 1;        // 1 to 3
-        int hp = rand.nextInt(4001) + 4000;     // 4000 to 8000
-        int damage = rand.nextInt(1001) + 500;  // 500 to 1500
+        int range = rand.nextInt(3) + 1;
+        int hp = rand.nextInt(4001) + 4000;
+        int damage = rand.nextInt(1001) + 500;
         return new Enemy(range, damage, hp);
     }
 }

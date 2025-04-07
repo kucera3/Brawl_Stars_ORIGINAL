@@ -1,4 +1,4 @@
-
+package brawlers;
 public class Enemy {
     private int range;
     private int damage;

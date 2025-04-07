@@ -1,3 +1,6 @@
+package commands;
+import brawlers.*;
+import game.*;
 public class MoveCommand implements Command {
     private final PlayerPosition position;
     private final String direction;
@@ -22,7 +25,7 @@ public class MoveCommand implements Command {
 
             if (next.getEnemy() != null) {
                 new Battle(playerBrawler, next.getEnemy(), next).startBattle();
-                next.setEnemy(null); // Remove after battle
+                next.setEnemy(null);
             }
         } else {
             System.out.println("You can't go that way.");

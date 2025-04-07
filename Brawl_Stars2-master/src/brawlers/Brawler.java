@@ -1,4 +1,4 @@
-
+package brawlers;
 
 public class Brawler {
     protected int range;

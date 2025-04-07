@@ -1,3 +1,4 @@
+package brawlers;
 public class Profile {
     private String username;
     private int xp;

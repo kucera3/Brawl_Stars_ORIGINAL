@@ -1,3 +1,6 @@
+package game;
+import brawlers.*;
+import commands.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -6,6 +9,7 @@ import java.util.Map;
 public class FullMap {
     private Map<String, Location> locations;
 
+    //got helped by chatgpt
     public void loadWorldFromCSV(String filename) {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;

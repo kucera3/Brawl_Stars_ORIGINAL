@@ -1,5 +1,9 @@
-class AttackCommand implements Command {
-    private Brawler brawler;
+package commands;
+import brawlers.*;
+import game.*;
+
+public class AttackCommand implements Command {
+    public Brawler brawler;
 
     public AttackCommand(Brawler brawler) {
         this.brawler = brawler;

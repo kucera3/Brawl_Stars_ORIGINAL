@@ -1,3 +1,4 @@
+package brawlers;
 public class Poco extends Brawler {
 
     public Poco(int range, int damage, int hp, Rarity rarity) {

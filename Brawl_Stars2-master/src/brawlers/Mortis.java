@@ -1,3 +1,4 @@
+package brawlers;
 public class Mortis extends Brawler {
     public Mortis(int range, int damage, int hp, Rarity rarity) {
         super(range, damage, hp, rarity = Rarity.MYTHIC);

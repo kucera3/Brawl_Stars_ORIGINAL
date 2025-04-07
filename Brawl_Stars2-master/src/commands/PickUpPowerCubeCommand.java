@@ -1,4 +1,6 @@
-
+package commands;
+import brawlers.*;
+import game.*;
 class PickupPowerCubeCommand implements Command {
     private Brawler brawler;
 

@@ -1,3 +1,6 @@
+package game;
+import brawlers.*;
+import commands.*;
 import java.util.HashMap;
 import java.util.Map;
 
